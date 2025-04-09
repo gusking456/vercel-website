@@ -29,7 +29,7 @@ export default function HomePage() {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
     // Simulated authentication; replace with your auth logic.
-    if (email === "resident@example.com" && password === "password") {
+    if (email === "tutor@uni.sydney.edu.au" && password === "ilovecoding") {
       router.push("/hub")
     } else {
       setError("Invalid credentials")
