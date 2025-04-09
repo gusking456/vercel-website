@@ -60,6 +60,23 @@ export default function DocumentsPage() {
           </CardContent>
         </Card>
       </div>
+      <div className="mt-8">
+        <Card>
+          <CardHeader>
+            <CardTitle>Floor Plan</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <object data="/floorplan.webp" type="application/pdf" width="100%" height="400">
+              <p>
+                Floor plan preview is not available.{" "}
+                <a href="/floorplan.pdf" download>
+                  Download Floor Plan
+                </a>
+              </p>
+            </object>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   )
 }
