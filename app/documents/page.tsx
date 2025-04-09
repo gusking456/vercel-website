@@ -31,7 +31,7 @@ export default function DocumentsPage() {
         <Card>
           <CardHeader className="flex justify-between items-center">
             <CardTitle>Maintenance</CardTitle>
-            <a href="/app/documents/2.pdf" download>
+            <a href="app/documents/2.pdf" download>
               <Button variant="outline" size="sm">
                 Download
               </Button>
