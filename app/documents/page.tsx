@@ -15,7 +15,7 @@ export default function DocumentsPage() {
         <Card>
           <CardHeader className="flex justify-between items-center">
             <CardTitle>Annual Report</CardTitle>
-            <a href="public/1.pdf" download>
+            <a href="/1.pdf" download>
               <Button variant="outline" size="sm">
                 Download
               </Button>
@@ -31,7 +31,7 @@ export default function DocumentsPage() {
         <Card>
           <CardHeader className="flex justify-between items-center">
             <CardTitle>Maintenance</CardTitle>
-            <a href="public/2.pdf" download>
+            <a href="/2.pdf" download>
               <Button variant="outline" size="sm">
                 Download
               </Button>
@@ -47,7 +47,7 @@ export default function DocumentsPage() {
         <Card>
           <CardHeader className="flex justify-between items-center">
             <CardTitle>Meeting Minutes</CardTitle>
-            <a href="public/3.pdf" download>
+            <a href="/3.pdf" download>
               <Button variant="outline" size="sm">
                 Download
               </Button>
