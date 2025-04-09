@@ -6,10 +6,12 @@ import { HomeButton } from "@/components/HomeButton" // adjust path as needed
 
 export default function CommitteePage() {
   return (
-    <div className="relative min-h-screen">
-      {/* HomeButton appears at the top right */}
-      <HomeButton />
+    <div className="min-h-screen">
       <div className="container py-6">
+        {/* Place HomeButton aligned to the right within the container */}
+        <div className="flex justify-end mb-4">
+          <HomeButton />
+        </div>
         <div className="grid gap-6">
           <div>
             <h1 className="text-3xl font-bold tracking-tight">Committee Management</h1>
@@ -132,9 +134,7 @@ export default function CommitteePage() {
                 </Card>
                 <Card className="border-dashed">
                   <CardContent className="flex h-full flex-col items-center justify-center p-6">
-                    <p className="mb-2 text-center text-muted-foreground">
-                      Add another committee member
-                    </p>
+                    <p className="mb-2 text-center text-muted-foreground">Add another committee member</p>
                     <Button variant="outline">Add Member</Button>
                   </CardContent>
                 </Card>
@@ -144,17 +144,13 @@ export default function CommitteePage() {
               <Card>
                 <CardHeader>
                   <CardTitle>Roles & Responsibilities</CardTitle>
-                  <CardDescription>
-                    As defined by the Strata Schemes Management Act (2015)
-                  </CardDescription>
+                  <CardDescription>As defined by the Strata Schemes Management Act (2015)</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div>
                     <h3 className="text-lg font-medium">Chairperson</h3>
                     <ul className="mt-2 list-disc pl-6 text-sm text-muted-foreground">
-                      <li>
-                        Preside at all meetings of the strata committee and the owners corporation
-                      </li>
+                      <li>Preside at all meetings of the strata committee and the owners corporation</li>
                       <li>Establish meeting procedures and maintain order</li>
                       <li>Ensure proper minutes are kept</li>
                       <li>Act as the official spokesperson for the owners corporation</li>
@@ -173,14 +169,10 @@ export default function CommitteePage() {
                     <h3 className="text-lg font-medium">Treasurer</h3>
                     <ul className="mt-2 list-disc pl-6 text-sm text-muted-foreground">
                       <li>Notify owners of levy contributions</li>
-                      <li>
-                        Receive, acknowledge and account for money paid to the owners corporation
-                      </li>
+                      <li>Receive, acknowledge and account for money paid to the owners corporation</li>
                       <li>Prepare financial statements and budgets</li>
                       <li>Manage the administrative and capital works funds</li>
-                      <li>
-                        Keep accounting records and ensure they are audited when required
-                      </li>
+                      <li>Keep accounting records and ensure they are audited when required</li>
                     </ul>
                   </div>
                   <div>
