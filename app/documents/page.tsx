@@ -66,7 +66,7 @@ export default function DocumentsPage() {
             <CardTitle>Floor Plan</CardTitle>
           </CardHeader>
           <CardContent>
-            <object data="/floorplan.webp" type="application/pdf" width="100%" height="400">
+            <object data="/floor_plan.webp" type="application/pdf" width="100%" height="400">
               <p>
                 Floor plan preview is not available.{" "}
                 <a href="/floorplan.pdf" download>
