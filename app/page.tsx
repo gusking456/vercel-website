@@ -1,5 +1,15 @@
+import { useState } from "react"
+import { useRouter } from "next/router"
 import Link from "next/link"
-import { Building, ChevronRight, ClipboardList, FileText, MessageSquare, Users, Wallet } from "lucide-react"
+import {
+  Building,
+  ChevronRight,
+  ClipboardList,
+  FileText,
+  MessageSquare,
+  Users,
+  Wallet
+} from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -7,7 +17,23 @@ import { Overview } from "@/components/overview"
 import { RecentActivity } from "@/components/recent-activity"
 import { UpcomingMeetings } from "@/components/upcoming-meetings"
 
-export default function Dashboard() {
+export default function HomePage() {
+  const router = useRouter()
+  const [showLogin, setShowLogin] = useState(false)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Simulated authentication; replace with your auth logic.
+    if (email === "resident@example.com" && password === "password") {
+      router.push("/hub")
+    } else {
+      setError("Invalid credentials")
+    }
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-10 border-b bg-background">
@@ -39,7 +65,12 @@ export default function Dashboard() {
               Communication
             </Link>
           </nav>
-          <Button variant="outline" size="sm" className="hidden md:flex">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setShowLogin(true)}
+            className="hidden md:flex transition-transform duration-150 ease-in-out active:scale-95 hover:scale-105"
+          >
             <Users className="mr-2 h-4 w-4" />
             Resident Portal
           </Button>
@@ -200,6 +231,40 @@ export default function Dashboard() {
           </nav>
         </div>
       </footer>
+      {showLogin && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-6 rounded shadow-lg w-full max-w-sm">
+            <h2 className="text-2xl font-bold mb-4">Resident Login</h2>
+            {error && <p className="text-red-500 mb-2">{error}</p>}
+            <form onSubmit={handleLogin} className="flex flex-col gap-4">
+              <input
+                type="email"
+                placeholder="Email"
+                className="border p-2 rounded"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                className="border p-2 rounded"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <Button type="submit">Login</Button>
+            </form>
+            <Button
+              variant="outline"
+              onClick={() => setShowLogin(false)}
+              className="mt-4"
+            >
+              Cancel
+            </Button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
