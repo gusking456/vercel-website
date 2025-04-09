@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -66,16 +67,21 @@ export default function DocumentsPage() {
             <CardTitle>Floor Plan</CardTitle>
           </CardHeader>
           <CardContent>
-            <object data="/floorplan.pdf" type="application/pdf" width="100%" height="400">
+            <object data="/floor_plan.webp" type="application/pdf" width="100%" height="400">
               <p>
                 Floor plan preview is not available.{" "}
-                <a href="/floorplan.pdf" download>
+                <a href="/floor_plan.webp" download>
                   Download Floor Plan
                 </a>
               </p>
             </object>
           </CardContent>
         </Card>
+      </div>
+      <div className="mt-8 text-center">
+        <Link href="/" passHref>
+          <Button variant="secondary">Back to Home</Button>
+        </Link>
       </div>
     </div>
   )
