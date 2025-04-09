@@ -3,18 +3,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export default function DocumentsPage() {
   return (
-    <div className="container py-8">
-      <header className="mb-8 text-center">
-        <h1 className="text-4xl font-bold tracking-tight mb-2 animate-pulse">
-          Documents Hub
-        </h1>
-        <p className="text-muted-foreground text-lg">
-          Explore and download essential documents with an interactive experience.
+    <div className="container py-6">
+      <div className="mb-6">
+        <h1 className="text-3xl font-bold tracking-tight">Documents</h1>
+        <p className="text-muted-foreground">
+          Download important documents for building management.
         </p>
-      </header>
-      <section className="grid gap-8 md:grid-cols-3">
+      </div>
+      <div className="grid gap-6 md:grid-cols-3">
         {/* Annual Report */}
-        <Card className="transition-transform duration-300 hover:scale-105 cursor-pointer">
+        <Card>
           <CardHeader className="flex justify-between items-center">
             <CardTitle>Annual Report</CardTitle>
             <a href="/1.pdf" download>
@@ -30,7 +28,7 @@ export default function DocumentsPage() {
           </CardContent>
         </Card>
         {/* Maintenance */}
-        <Card className="transition-transform duration-300 hover:scale-105 cursor-pointer">
+        <Card>
           <CardHeader className="flex justify-between items-center">
             <CardTitle>Maintenance</CardTitle>
             <a href="/2.pdf" download>
@@ -46,7 +44,7 @@ export default function DocumentsPage() {
           </CardContent>
         </Card>
         {/* Meeting Minutes */}
-        <Card className="transition-transform duration-300 hover:scale-105 cursor-pointer">
+        <Card>
           <CardHeader className="flex justify-between items-center">
             <CardTitle>Meeting Minutes</CardTitle>
             <a href="/3.pdf" download>
@@ -57,34 +55,28 @@ export default function DocumentsPage() {
           </CardHeader>
           <CardContent>
             <CardDescription>
-              Meeting minutes sample from a recent committee meeting.
+              Meeting minutes template and sample from a recent committee meeting.
             </CardDescription>
           </CardContent>
         </Card>
-      </section>
-      <section className="mt-12">
-        <Card className="transition-transform duration-300 hover:scale-105">
+      </div>
+      <div className="mt-8">
+        <Card>
           <CardHeader>
             <CardTitle>Floor Plan</CardTitle>
           </CardHeader>
           <CardContent>
-            <object
-              data="/floor_plan.webp"
-              type="application/pdf"
-              width="100%"
-              height="400"
-              className="rounded"
-            >
+            <object data="/floorplan.pdf" type="application/pdf" width="100%" height="400">
               <p>
                 Floor plan preview is not available.{" "}
-                <a href="/floor_plan.webp" download className="text-primary hover:underline">
+                <a href="/floorplan.pdf" download>
                   Download Floor Plan
                 </a>
               </p>
             </object>
           </CardContent>
         </Card>
-      </section>
+      </div>
     </div>
   )
 }
