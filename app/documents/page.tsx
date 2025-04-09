@@ -47,7 +47,7 @@ export default function DocumentsPage() {
         <Card>
           <CardHeader className="flex justify-between items-center">
             <CardTitle>Meeting Minutes</CardTitle>
-            <a href="/app/documents/3.pdf" download>
+            <a href="app/documents/3.pdf" download>
               <Button variant="outline" size="sm">
                 Download
               </Button>
