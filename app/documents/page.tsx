@@ -4,7 +4,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export default function DocumentsPage() {
   return (
-    <div className="container py-6">
+    <div className="relative container py-6">
+      {/* Back to Home Button at the top right with a cool press animation */}
+      <div className="absolute top-6 right-6">
+        <Link href="/" passHref>
+          <Button 
+            variant="secondary" 
+            className="transition-transform duration-150 ease-in-out active:scale-95 hover:scale-105"
+          >
+            Back to Home
+          </Button>
+        </Link>
+      </div>
       <div className="mb-6">
         <h1 className="text-3xl font-bold tracking-tight">Documents</h1>
         <p className="text-muted-foreground">
@@ -77,11 +88,6 @@ export default function DocumentsPage() {
             </object>
           </CardContent>
         </Card>
-      </div>
-      <div className="mt-8 text-center">
-        <Link href="/" passHref>
-          <Button variant="secondary">Back to Home</Button>
-        </Link>
       </div>
     </div>
   )
