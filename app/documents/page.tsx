@@ -69,7 +69,7 @@ export default function DocumentsPage() {
           </CardHeader>
           <CardContent>
             <object
-              data="/floorplan.pdf"
+              data="/floor_plan.webp"
               type="application/pdf"
               width="100%"
               height="400"
