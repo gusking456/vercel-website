@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useRouter } from "next/navigation" // Updated import
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import {
   Building,
@@ -29,7 +29,7 @@ export default function HomePage() {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
     // Simulated authentication; replace with your auth logic.
-    if (email === "tutor@uni.sydney.edu.au" && password === "ilovecoding") {
+    if (email === "resident@example.com" && password === "password") {
       router.push("/hub")
     } else {
       setError("Invalid credentials")
@@ -84,6 +84,7 @@ export default function HomePage() {
       </header>
       <main className="flex-1">
         <div className="container py-6">
+          {/* Dashboard Heading */}
           <div className="grid gap-6">
             <div>
               <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
@@ -91,6 +92,7 @@ export default function HomePage() {
                 Welcome to your strata management dashboard. Here's what's happening in your building.
               </p>
             </div>
+            {/* Dashboard Cards */}
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               <Card>
                 <CardHeader className="flex flex-row items-center justify-between pb-2">
@@ -133,6 +135,7 @@ export default function HomePage() {
                 </CardContent>
               </Card>
             </div>
+            {/* Additional Dashboard Sections */}
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-7">
               <Card className="col-span-4">
                 <CardHeader>
@@ -233,10 +236,17 @@ export default function HomePage() {
           </nav>
         </div>
       </footer>
+      
       {showLogin && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded shadow-lg w-full max-w-sm">
             <h2 className="text-2xl font-bold mb-4">Resident Login</h2>
+            {/* Demo credentials info */}
+            <div className="mb-4 p-2 bg-gray-50 border border-gray-200 rounded">
+              <p className="text-sm text-muted-foreground">
+                <strong>Demo Credentials:</strong> Username: tutor@uni.sydney.edu.au | Password: ilovecoding
+              </p>
+            </div>
             {error && <p className="text-red-500 mb-2">{error}</p>}
             <form onSubmit={handleLogin} className="flex flex-col gap-4">
               <input
