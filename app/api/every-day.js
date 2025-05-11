@@ -1,4 +1,4 @@
 export default function handler(req, res) {
-  console.log("✅ Cron: Running every hour task");
-  res.status(200).send("Hourly task executed successfully");
+  console.log("✅ Cron: Running daily task");
+  res.status(200).send("Daily task executed successfully");
 }
