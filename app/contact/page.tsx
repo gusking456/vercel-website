@@ -80,20 +80,6 @@ export default function FormPage() {
             </form>
           </CardContent>
         </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Next Steps</CardTitle>
-            <CardDescription>Check network tab for method details</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="list-disc ml-5 text-muted-foreground">
-              <li>GET values visible in the URL (query string)</li>
-              <li>POST values visible in request body</li>
-              <li>Check dev tools → Network tab to inspect method</li>
-            </ul>
-          </CardContent>
-        </Card>
       </main>
     </div>
   )
