@@ -63,9 +63,6 @@ export default function HomePage() {
             <Link href="/contact" className="text-sm font-medium text-muted-foreground hover:text-primary">
               Contact
             </Link>
-            <Link href="/meetings" className="text-sm font-medium text-muted-foreground hover:text-primary">
-              Meetings
-            </Link>
           </nav>
           <Button
             variant="outline"
