@@ -46,7 +46,8 @@ export function middleware(request: NextRequest) {
       status: 200
     });
   }
-
+  
+// 2. Welcome Screen
   const hasDismissed = request.cookies.get('visited')?.value === 'true';
 
 if (!hasDismissed && pathname === '/') {
