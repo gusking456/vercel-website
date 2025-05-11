@@ -115,3 +115,49 @@ if (!hasDismissed && pathname === '/') {
 
   return NextResponse.next();
 }
+
+// 3. Geo blocking by country with testable query param override
+const blockedCountries = ['CN', 'RU', 'KP']; // Blocked countries list
+
+// Use geo.country if available, otherwise use a ?country= override for testing
+const country =
+  request.geo?.country ||
+  request.nextUrl.searchParams.get('country')?.toUpperCase();
+
+if (country && blockedCountries.includes(country)) {
+  return new Response(`
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <title>Access Restricted</title>
+        <style>
+          body {
+            background: #1a1a1a;
+            color: #fff;
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
+          }
+          h1 {
+            font-size: 2.5rem;
+            color: #e74c3c;
+          }
+          p {
+            max-width: 400px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Access Restricted</h1>
+        <p>We're currently not allowing access from your region (${country}).</p>
+      </body>
+    </html>
+  `, {
+    headers: { 'Content-Type': 'text/html' },
+    status: 403
+  });
+}
