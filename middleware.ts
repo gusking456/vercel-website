@@ -35,7 +35,7 @@ export function middleware(request: NextRequest) {
           </style>
         </head>
         <body>
-          <h1>🚧 SITE UNDER MAINTENANCE</h1>
+          <h1>SITE UNDER MAINTENANCE</h1>
           <p>We're working on improvements. Please check back later.</p>
         </body>
       </html>
