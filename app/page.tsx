@@ -60,11 +60,11 @@ export default function HomePage() {
             <Link href="/documents" className="text-sm font-medium text-muted-foreground hover:text-primary">
               Documents
             </Link>
+            <Link href="/contact" className="text-sm font-medium text-muted-foreground hover:text-primary">
+              Contact
+            </Link>
             <Link href="/meetings" className="text-sm font-medium text-muted-foreground hover:text-primary">
               Meetings
-            </Link>
-            <Link href="/communication" className="text-sm font-medium text-muted-foreground hover:text-primary">
-              Communication
             </Link>
           </nav>
           <Button
