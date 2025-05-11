@@ -44,14 +44,14 @@ export default function FormPage() {
       </header>
 
       <main className="container py-10">
-        <h2 className="text-2xl font-bold mb-4">HTML Forms – GET and POST</h2>
+        <h2 className="text-2xl font-bold mb-4">Resident Information Form</h2>
 
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle>GET Form</CardTitle>
-            <CardDescription>Data sent as query parameters</CardDescription>
+            <CardTitle>Resident Details</CardTitle>
+            <CardDescription>This form demonstrates GET and POST handling</CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="space-y-6">
             <form action="/form" method="GET" className="flex gap-4">
               <input
                 type="text"
@@ -61,17 +61,9 @@ export default function FormPage() {
                 onChange={(e) => setGetName(e.target.value)}
                 className="border p-2 rounded w-full"
               />
-              <Button type="submit">Submit GET</Button>
+              <Button type="submit">Submit Name</Button>
             </form>
-          </CardContent>
-        </Card>
 
-        <Card className="mb-6">
-          <CardHeader>
-            <CardTitle>POST Form</CardTitle>
-            <CardDescription>Data sent in request body</CardDescription>
-          </CardHeader>
-          <CardContent>
             <form onSubmit={handlePostSubmit} className="flex flex-col gap-4">
               <input
                 type="email"
@@ -81,9 +73,9 @@ export default function FormPage() {
                 required
                 className="border p-2 rounded"
               />
-              <Button type="submit">Submit POST</Button>
+              <Button type="submit">Submit Email</Button>
               {submittedPostData && (
-                <p className="text-green-600">POST received: {submittedPostData}</p>
+                <p className="text-green-600">Email received: {submittedPostData}</p>
               )}
             </form>
           </CardContent>
